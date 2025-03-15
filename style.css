@@ -1,0 +1,87 @@
+h1 {
+  background-color: cyan;
+  color: red;
+}
+
+/* this is element selector */
+
+.main-heading {
+  background-color: yellow;
+  color: rgb(241, 89, 152);
+}
+/* this is class selector and this overrides the element selector */
+
+#main-headblock {
+  background-color: darksalmon;
+  color: rgb(0, 0, 0);
+}
+/* this is id selector and it overrides the class selector */
+
+#main-headblock.main-heading {
+  background-color: green;
+  color: red;
+}
+
+/* this is chaining selectors to increase the specificity and this will be applied */
+
+html body main section .main-heading#main-headblock {
+  background-color: red;
+  color: green;
+}
+
+/* and this is another way to increase the specificity */
+
+#first-item {
+  background-color: cyan;
+  color: red;
+}
+
+#second-item {
+  background-color: yellow;
+  color: rgb(241, 89, 152);
+}
+
+#third-item {
+  background-color: darksalmon;
+  color: rgb(0, 0, 0);
+}
+
+#fourth-item {
+  background-color: green;
+  color: red;
+}
+
+#fifth-item {
+  background-color: red;
+  color: green;
+}
+
+#sixth-item {
+  background-color: pink;
+  color: blue;
+}
+
+/* adding important */
+h1 {
+  background-color: cyan !important;
+  color: red !important;
+}
+
+#last {
+  background-color: rgb(31, 221, 40);
+  color: red;
+  animation: blink 1s steps(2, start) infinite;
+  -webkit-animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}

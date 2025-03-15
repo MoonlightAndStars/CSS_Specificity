@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overriding Specificity</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1 class="main-heading" id="main-headblock" style="background-color: pink; color: blue;">
+          Overriding Specificity !
+        </h1>
+        <p class="paragraph" id="main-section-para">
+          In this lesson we are learning how to override the specificity in a
+          way that it can never get overridden again.
+        </p>
+        <p>
+          Note : This heading is styled as Red color with cyan background in the
+          CSS file but the style will not get updated here despite using ID
+          selector, along with chaining it to the class selector
+        </p>
+      </section>
+      <section>
+        <h2>We can override it in two ways :</h2>
+        <ul>
+          <li>Inline Element : They have specificity value of 1000</li>
+          <li>!Important Tag : </li>
+        </ul>
+      </section>
+      <section>
+        <fieldset>
+          <legend>
+            How browsers assign value and applies rule over another
+          </legend>
+          <ol>
+            <li id="first-item">Overriding Specificity</li>
+            <li id="second-item">Overriding Specificity</li>
+            <li id="third-item">Overriding Specificity</li>
+            <li id="fourth-item">Overriding Specificity</li>
+            <li id="fifth-item">Overriding Specificity</li>
+            <li id="sixth-item">Overriding Specificity</li>
+          </ol>
+        </fieldset>
+      </section>
+      <section>
+        <fieldset>
+          <legend>The CSS Applied on each of them !</legend>
+          <ol>
+            <li>
+              This is the first CSS that was applied and this was overridden by
+              the second one.
+              <strong>h1 { background-color: cyan; color: red;}</strong>
+            </li>
+            <li>
+              This is the second CSS that was applied and this was overridden by
+              the third one.
+              <strong>.main-heading {
+    background-color: yellow;
+    color: rgb(241, 89, 152);
+}
+/* this is class selector and this overrides the element selector */</strong>
+            </li>
+            <li>
+              This is the third CSS that was applied and this was overridden by
+              the fourth one.
+              <strong>#main-headblock {
+    background-color: darksalmon;
+    color: rgb(0, 0, 0);
+}
+/* this is id selector and it overrides the class selector */</strong>
+            </li>
+            <li>
+              This is the fourth CSS that was applied and this was overridden by
+              the fifth one.
+              <strong>#main-headblock.main-heading {
+    background-color: green;
+    color: red;
+}
+
+/* this is chaining selectors to increase the specificity and this will be applied */</strong>
+            </li>
+            <li>
+              This is the fifth CSS that was applied and this was overridden by
+              the second one.
+              <strong>html body main section .main-heading#main-headblock {
+    background-color: red;
+    color: green;
+}
+
+/* and this is another way to increase the specificity */</strong>
+            </li>
+            
+          </ol>
+          <p>Even this can be overridden by inline styling or by !important keyword.</p>
+        </fieldset>
+      </section>
+      <h2 id="last">Using !IMPORTANT on 1 that is the lowest in specificity and IMPORTANT CAN BE OVERRIDDEN BY IMPORTANT.</h2>
+    </main>
+  </body>
+</html>
